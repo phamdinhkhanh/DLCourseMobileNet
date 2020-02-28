@@ -1,0 +1,4 @@
+node_modules
+mobilenet_v2_224.h5
+.sass-cache
+package-lock.json

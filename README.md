@@ -4,6 +4,9 @@ This repository contains projects that I worked using TensorFlow.js and Keras.
 1. Classify images using Keras MobileNet in Google Chrome using TensorFlow.js
 
 * **Tools used**: Keras, TensorFlow.js
-* **Tutorial**: [Classify images using Keras MobileNet in Google Chrome using TensorFlow.js](https://gogul09.github.io/software/mobile-net-tensorflow-js)
+* **Tutorial**: Classify images using Keras MobileNet in Google Chrome using TensorFlow.js
 
-![alt text](https://github.com/Gogul09/mobile-net-projects/blob/master/assets/out.gif)
+# Run model:
+* Step 1: Clone git into your computer.
+* Step 2: open google chrome disable security to bypass CORS error.
+* Step 3: copy link of file index.html and paste into new chrome pop up from step 2.

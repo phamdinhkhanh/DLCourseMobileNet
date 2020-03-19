@@ -1,4 +1,7 @@
 let model;
+let IMAGE_WIDTH = 300;
+
+
 async function loadModel() {
 	console.log("model loading..");
 	loader = document.getElementById("progress-box");
@@ -18,27 +21,29 @@ async function loadModel() {
 	}
 }
 
-$("#select-file-image").change(function() {
+function loadImageLocal() {
 	console.log("Click into selected file image");
   	document.getElementById("select-file-box").style.display = "table-cell";
   	document.getElementById("predict-box").style.display = "table-cell";
   	document.getElementById("prediction").innerHTML = "Click predict to find my label!";
-    renderImage(this.files[0]);
-});
+    renderImage(this.files);
+};
+
+
+
 
 function renderImage(file) {
   var reader = new FileReader();
   reader.onload = function(event) {
-    img_url = event.target.result;
-    console.log("image url: ", img_url);
-    document.getElementById("test-image").src = img_url;
+    let output = document.getElementById('test-image');
+  	output.src = reader.result;
+  	output.width = IMAGE_WIDTH;
   }
-  reader.readAsDataURL(file);
+  
+  if(event.target.files[0]){
+	reader.readAsDataURL(event.target.files[0]);
+  }
 }
-
-// $("#predict-button").click(() => {
-// 	console.log("Click predict button");
-// });
 
 async function predictImage(){
 	console.log("Click predict button");
@@ -149,4 +154,5 @@ function loadDemoImage() {
 	var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 	img_path = base_path + randomnumber + ".jpg"
 	document.getElementById("test-image").src = img_path;
+	document.getElementById("test-image").width = IMAGE_WIDTH;                
 }
